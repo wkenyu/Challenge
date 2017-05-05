@@ -16,6 +16,9 @@
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+## Merging data sets
+The training data set and the test sets are same size on columns, so *bind_rows* is appropriate for merging.
+
 ## Description of Labeling the data set
 To accomplish task 4, the script does following things to features;
 
