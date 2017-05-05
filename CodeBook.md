@@ -1,15 +1,9 @@
 <!-- html table generated in R 3.3.3 by xtable 1.8-2 package -->
-<!-- Sat May  6 02:13:55 2017 -->
+<!-- Sat May  6 03:40:11 2017 -->
 <table border=1>
 <tr> <th>  </th> <th> columnName </th> <th> type </th> <th> description </th>  </tr>
-  <tr> <td align="right"> 1 </td> <td> activity </td> <td> integer </td> <td> Factor variable that identifies subjects . </td> </tr>
-  <tr> <td align="right"> 2 </td> <td> subject </td> <td> character </td> <td> Character variable that indicates one of six different activities.
-Laying
-Sitting
-Standing
-Walking
-Walking_Downstairs
-Walking_Upstairs </td> </tr>
+  <tr> <td align="right"> 1 </td> <td> activity </td> <td> integer </td> <td> Character variable that indicates one of six different activities of followings: Laying, Sitting, Standing, Walking, Walking_Upstairs, Walking_Downstairs </td> </tr>
+  <tr> <td align="right"> 2 </td> <td> subject </td> <td> character </td> <td> Integer factor variable that identifies subject. Participants of this experiment are 30 people, so the range of this variable is from 1 to 30, </td> </tr>
   <tr> <td align="right"> 3 </td> <td> meanOfTimeBodyAccMeanX </td> <td> double </td> <td> Numeric variable measuring the mean of time domain body acceleration means in X direction. </td> </tr>
   <tr> <td align="right"> 4 </td> <td> meanOfTimeBodyAccMeanY </td> <td> double </td> <td> Numeric variable measuring the mean of time domain body acceleration means in Y direction. </td> </tr>
   <tr> <td align="right"> 5 </td> <td> meanOfTimeBodyAccMeanZ </td> <td> double </td> <td> Numeric variable measuring the mean of time domain body acceleration means in Z direction. </td> </tr>
