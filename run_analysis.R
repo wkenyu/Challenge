@@ -12,8 +12,6 @@ mergedData <- bind_rows(xtrain, xtest)
 features <- fread("~/DataScientist/UCI HAR Dataset/features.txt")
 features <- transpose(features[,2])
 
-# valid_column_name <-  make.names(as.character(unname(features)), unique = TRUE)
-# names(mergedData) <- valid_column_name
 matched <- grep("std|mean[^Freq]", features)
 
 selected <- select(mergedData, matched)
