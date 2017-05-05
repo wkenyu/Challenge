@@ -1,10 +1,11 @@
 ### Outline
 　This repository explains the result of the final project in "Getting and Cleaning the Data" Coursera corse.
 ### Result
- *result.csv* is the data set that has been created for this project.To read this file, download this file to your
- working directory and type this,
+ *result.txt* is the data set that has been created for this project.To read this file, download this file to your
+ working directory and run these command
  ```
- read.table("result.csv", header = TRUE, sep = ",", row.names=1)
+ data <- read.table("result.txt", header = TRUE)
+ View(data)
 ```
 
 ### run_analysis.R
