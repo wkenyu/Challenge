@@ -1,10 +1,11 @@
 ### Outline
 　This repository explains the result of the final project in "Getting and Cleaning the Data" Coursera corse.
 ### Result
- *result.csv* is the data set that has been created for this project.To read this file, download this file to your
- working directory and type this,
+ *result.txt* is the data set that has been created for this project.To read this file, download this file to your
+ working directory and run these command
  ```
- read.table("result.csv", header = TRUE, sep = ",", row.names=1)
+ data <- read.table("result.txt", header = TRUE)
+ View(data)
 ```
 
 ### run_analysis.R
@@ -15,6 +16,9 @@
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+## Merging data sets
+The training data set and the test sets are same size on columns, so *bind_rows* is appropriate for merging.
 
 ## Description of Labeling the data set
 To accomplish task 4, the script does following things to features;
