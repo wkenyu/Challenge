@@ -12,14 +12,15 @@ mergedData <- bind_rows(xtrain, xtest)
 features <- fread("~/DataScientist/UCI HAR Dataset/features.txt")
 features <- transpose(features[,2])
 
-valid_column_name <-  make.names(as.character(unname(features)), unique = TRUE)
-names(mergedData) <- valid_column_name
+# valid_column_name <-  make.names(as.character(unname(features)), unique = TRUE)
+# names(mergedData) <- valid_column_name
 matched <- grep("std|mean[^Freq]", features)
 
 selected <- select(mergedData, matched)
 
 activity_labels <- read.table("~/DataScientist/UCI HAR Dataset/activity_labels.txt")
 names(activity_labels) <- c("ID", "activity")
+activity_labels[2] <-  c("Walking", "Walking_Upstairs", "Walking_Downstairs","Sitting", "Standing", "Laying")
 
 ytrain <- fread("~/DataScientist/UCI HAR Dataset/train/y_train.txt")
 ytest <- fread("~/DataScientist/UCI HAR Dataset/test/y_test.txt")
@@ -29,6 +30,14 @@ mergedLabel <- bind_rows(ytrain, ytest)
 names(mergedLabel) <- "ID"
 
 selected <- mutate(selected, activity = activity_labels[match(mergedLabel$ID, activity_labels$ID),2])
+
+valid_name <- unname(grep("std|mean[^Freq]", features, value = TRUE))
+valid_name <- gsub("-mean\\(\\)-*", "Mean", valid_name)
+valid_name <- gsub("-std\\(\\)-*", "Std", valid_name)
+valid_name <- gsub("^t", "Time", valid_name)
+valid_name <- gsub("^f", "Freq", valid_name)
+valid_name <- gsub("BodyBody", "Body", valid_name)
+names(selected)[1:66] <- paste0("meanOf", valid_name)
 
 subject_train <- read.table("~/DataScientist/UCI HAR Dataset/train/subject_train.txt")
 subject_test <- read.table("~/DataScientist/UCI HAR Dataset/test/subject_test.txt")
